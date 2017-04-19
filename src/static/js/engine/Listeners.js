@@ -4,9 +4,9 @@ RULES
 ─────
 
 ►►► Init module method when add listeners with "moduleInit" option on "true"
-►►► Need outroM option only when initialize module
+►►► Need outroM argument only when initialize module
 
-►►► Call module destroy method when remove listeners with destroy parameter
+►►► Call module destroy method when remove listeners with destroy boolean parameter
 
 ►►► All module callback method include 2 options : listeners & outroM
 ►►► Each module need : export default new MyModule()
