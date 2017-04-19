@@ -1,0 +1,27 @@
+{
+    "extends": "standard",
+    "env": {
+        "browser": true,
+        "jquery" : true
+    },
+    "globals": {
+        "google": true,
+        "bodymovin": true,
+        "THREE": true
+    },
+    "rules": {
+        "indent": ["error", 4, {
+            "SwitchCase": 1
+        }],
+        "no-new": 0,
+        "no-multi-spaces": ["error", {
+            exceptions: {
+                "VariableDeclarator": true,
+                "ImportDeclaration": true
+            }
+        }],
+        "no-labels": ["error", { "allowLoop": true }],
+        "no-unused-vars": 0,
+        "padded-blocks": ["error", "never"]
+    }
+}

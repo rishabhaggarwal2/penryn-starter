@@ -1,0 +1,21 @@
+<FilesMatch "\.(jpg|gif|png)$">
+
+  <IfModule mod_mime.c>
+    ForceType application/octet-stream
+  </IfModule>
+
+  <IfModule mod_headers.c>
+    ##fix a bug in old GoDaddy servers.
+    Header unset X-Content-Type-Options
+    Header unset Content-Disposition
+
+    ##prevent mimetype sniffing (first few bytes can determine that a file should be opened in browser).
+    Header set X-Content-Type-Options "nosniff"
+
+    ##extract filename, apply to proper (for example) Content-Disposition: attachment; file="my music.mp3"
+    SetEnvIf Request_URI "^.*/([^/]*)$" FILENAME=$1
+    Header set "Content-Disposition" "attachment; filename=\"%{FILENAME}e\""
+    UnsetEnv FILENAME
+  </IfModule>
+
+</FilesMatch>

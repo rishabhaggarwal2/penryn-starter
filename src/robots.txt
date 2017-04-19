@@ -1,0 +1,4 @@
+Sitemap: http://______________________/sitemap.xml
+User-Agent: *
+Disallow: /app/
+Disallow: /engine/

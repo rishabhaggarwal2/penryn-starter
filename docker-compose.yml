@@ -1,0 +1,18 @@
+version: "2"
+services:
+    php:
+        build: .
+        ports:
+            - 80:80
+        restart: always
+        volumes:
+            - ./:/var/www/html/
+            - ./:/etc/apache2/sites-enabled
+
+    db:
+        image: mysql
+        ports:
+            - 3306:3306
+        restart: always
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
