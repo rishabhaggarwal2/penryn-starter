@@ -172,6 +172,7 @@ class Listeners {
             if (!this.moduleArr[i].alreadyCalled && typeof module[name] === 'function') {
                 module[name]({
                     outroM: this.outroM,
+                    listeners: this,
                     arg: this.moduleArr[i].arg
                 })
             }
