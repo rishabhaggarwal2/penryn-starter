@@ -1,4 +1,4 @@
-import Loader from '../Loader/Loader.js'
+import Loader from '../Bundle/Common/Loader.js'
 import Transition from '../Bundle/Common/Transition.js'
 
 class AboutController {
@@ -10,23 +10,19 @@ class AboutController {
     preload (opts) {
         console.log('about preload')
 
-        Loader.run()
+        Loader.run(opts)
     }
 
     intro (opts) {
         console.log('about intro')
 
-        const xhr = opts.xhr
-        xhr.removeOld()
-        xhr.insertNew()
-
-        Transition.intro()
+        Transition.intro(opts)
     }
 
-    outro (done) {
+    outro (opts) {
         console.log('about outro')
 
-        Transition.outro(done)
+        Transition.outro(opts.done)
     }
 
 }
