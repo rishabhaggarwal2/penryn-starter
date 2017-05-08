@@ -8,20 +8,14 @@ class AboutController {
     }
 
     preload (opts) {
-        console.log('about preload')
-
         Loader.run(opts)
     }
 
     intro (opts) {
-        console.log('about intro')
-
         Transition.intro(opts)
     }
 
     outro (opts) {
-        console.log('about outro')
-
         Transition.outro(opts.done)
     }
 
