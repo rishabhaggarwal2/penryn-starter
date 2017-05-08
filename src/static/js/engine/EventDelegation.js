@@ -96,7 +96,11 @@ class EventDelegation {
         const oldInstance = this.getInstance(this.path.old)
 
         // Old outro
-        oldInstance.controller.outro(this.done, oldInstance.listeners)
+        oldInstance.controller.outro({
+            done: this.done,
+            listeners: oldInstance.listeners,
+            outroM: this.outroM
+        })
     }
 
     done (args) {

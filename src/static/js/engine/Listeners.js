@@ -26,10 +26,16 @@ class HomeController {
                     method: 'run'
                 }
             ],
+            keydown: [
+                {
+                    module: Slide,
+                    method: 'keydown'
+                }
+            ],
             ro: {
                 throttle: {
                     delay: 200,
-                    atEnd: true
+                    onlyAtEnd: true
                 },
                 module: Resize,
                 method: 'calculate'
@@ -102,7 +108,7 @@ class Listeners {
                 if (isThrottle) {
                     obj.throttle = evContent.throttle
                 } else {
-                    obj.el = evContent.el
+                    obj.el = evContent.el || document
                 }
                 arr.push(obj)
                 // Common arr

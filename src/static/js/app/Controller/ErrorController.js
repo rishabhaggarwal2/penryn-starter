@@ -15,8 +15,8 @@ class ErrorController {
         Transition.intro(opts)
     }
 
-    outro (done) {
-        Transition.outro(done)
+    outro (opts) {
+        Transition.outro(opts.done)
     }
 
 }

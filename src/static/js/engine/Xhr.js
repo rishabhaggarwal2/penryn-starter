@@ -59,7 +59,7 @@ class Xhr {
         S.Listen(w, 'add', 'popstate', popstate)
 
         function load () {
-            S.Delay(_ => {
+            setTimeout(_ => {
                 blockPopstateEvent = false
             }, 0)
         }

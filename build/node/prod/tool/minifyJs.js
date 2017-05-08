@@ -7,7 +7,8 @@ const showEnd = require('./showEnd.js')
 
 module.exports = internal => {
     // Add all files from main.js
-    const result = uglifyJS.minify([config.src + config.minify.js])
+    const js = fs.readFileSync(config.src + config.minify.js, 'utf8')
+    const result = uglifyJS.minify(js).code
     const closure = {
         start: '(function(){',
         end: '})();'
@@ -49,7 +50,7 @@ module.exports = internal => {
 
     function getFullResult () {
         // Grouping
-        const fullResult = closure.start + additionalScript + result.code + closure.end
+        const fullResult = closure.start + additionalScript + result + closure.end
 
         if (internal === 'y') {
             writeInternal({

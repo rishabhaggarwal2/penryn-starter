@@ -19,7 +19,7 @@ class HomeController {
             ro: {
                 throttle: {
                     delay: 200,
-                    atEnd: true
+                    onlyAtEnd: true
                 },
                 module: Resize,
                 method: 'calculate'
@@ -35,12 +35,12 @@ class HomeController {
         Transition.intro(opts)
     }
 
-    outro (done, listeners) {
-        listeners.remove({
+    outro (opts) {
+        opts.listeners.remove({
             destroy: true
         })
 
-        Transition.outro(done)
+        Transition.outro(opts.done)
     }
 
 }
