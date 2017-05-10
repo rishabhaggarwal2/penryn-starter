@@ -70,6 +70,7 @@ class Listeners {
         const speEvs = []
         this.normEvs = []
         this.moduleArr = []
+        this.speOpts = {}
 
         const spe = {
             scroll: {
@@ -146,9 +147,8 @@ class Listeners {
             const speEvSkylake = spe[speEv.event].skylake
 
             let opts
-            this.speOpts = {
-                listeners: this
-            }
+            this.speOpts.listeners = this
+
             if (speEvSkylake === 'Scroll') {
                 opts = {
                     callback: (s, d) => {
