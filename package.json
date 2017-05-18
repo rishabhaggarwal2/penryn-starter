@@ -1,6 +1,6 @@
 {
     "name": "penryn-starter",
-    "version": "4.0.9",
+    "version": "4.0.10",
     "description": "A starter kit for web development",
     "author": "Aristide Benoist",
     "license": "MIT",
@@ -15,7 +15,7 @@
         "skylake": "4.2.1"
     },
     "devDependencies": {
-        "autoprefixer": "7.1.0",
+        "autoprefixer": "7.1.1",
         "babel-preset-es2015-rollup": "3.0.0",
         "browser-sync": "2.18.11",
         "colors": "1.1.2",
@@ -40,6 +40,6 @@
         "rollup-plugin-commonjs": "8.0.2",
         "rollup-plugin-eslint": "3.0.0",
         "rollup-plugin-node-resolve": "3.0.0",
-        "uglify-js": "3.0.7"
+        "uglify-js": "3.0.8"
     }
 }
